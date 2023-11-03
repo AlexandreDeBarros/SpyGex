@@ -5,10 +5,11 @@ import requests
 
 class SpyGexModel:
 
+    regex = ''
+    url = ''
+    matched_results = []
+
     def __init__(self) :
-        self.regex
-        self.url
-        self.matched_results
         self.visited_urls = set()
 
     def match_regex_page(self, soup):

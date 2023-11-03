@@ -1,10 +1,12 @@
+import requests
+
 class SpyGexController:
 
     def __init__(self, model, view):
         self.model = model
         self.view = view
 
-    def research(self, url):
+    def research(self, url,regex):
         try:
             self.model.get_all_links(url, regex)
             print(self.model.visited_urls)
