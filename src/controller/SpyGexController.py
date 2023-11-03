@@ -7,8 +7,10 @@ class SpyGexController:
     def research(self, url):
         try:
             self.model.get_all_links(url, regex)
-            self.view.show_results(self.model.visited_urls)
-            self.view.show_matched_content(self.model.matches)
+            print(self.model.visited_urls)
+            print(self.model.matched_results)
+            #self.view.show_results(self.model.visited_urls)
+            #self.view.show_matched_results(self.matched_results)
         except requests.RequestException as e:
             print(f"Erreur de requête HTTP pour l'URL {url}: {e}")
         except Exception as e:
