@@ -6,15 +6,42 @@ class SpyGexController:
         self.model = model
         self.view = view
 
-    def research(self):
+    def start_search(self, url, regex):
         try:
-            self.model.get_all_links(self.model.url) 
-            self.model.match_regex_page(self.model.url_to_soup(self.model.url))  
-            print(self.model.visited_urls)
-            print(self.model.matched_results)
-            #self.view.show_results(self.model.visited_urls)
-            #self.view.show_matched_results(self.matched_results)
+            # Assign URL and regex to the model
+            self.model.url = url
+            self.model.regex = regex
+
+            # Begin crawling process
+            self.model.start_crawling()
+            print(self.model.df_result)
+
+            # Update the scrollable frame in the view with results
+            self.view.update_scrollable_frame(self.model.df_result, self.model.url, self.model.regex)
+
+            # Show the detail view if results are found
+            if not self.model.df_result.empty:
+                self.view.show_detail_view()
+            else:
+                # No results message
+                print("Info", "No results found.")
+
+        # Handle HTTP request exceptions
         except requests.RequestException as e:
-            print(f"Erreur de requête HTTP pour l'URL : {e}")
+            print(f"HTTP request error for URL: {e}")
+
+        # Handle general exceptions
         except Exception as e:
-            print(f"Erreur lors du traitement de l'URL : {e}")
+            print(f"Error processing URL: {e}")
+
+    def get_regex_patterns(self):
+        # Return regex patterns from the model
+        return self.model.get_regex_patterns()
+    
+    def reset_model(self):
+        # Create a new instance of the model
+        self.model = type(self.model)()
+
+    def export_csv(self, file_path):
+        # Export data to CSV
+        self.model.export_csv(file_path)
