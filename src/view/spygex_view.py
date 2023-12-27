@@ -95,10 +95,6 @@ class SpyGexView(ctk.CTk):
 
     # Update scrollable frame with search results
     def update_scrollable_frame(self, df, url, regex_to_use):
-        
-        # Remove old widgets
-        for widget in self.scrollable_frame.winfo_children():
-            widget.destroy()
 
         # Create frame and labels for domain name and regex
         info_frame = ctk.CTkFrame(self)
@@ -179,6 +175,10 @@ class SpyGexView(ctk.CTk):
         for widget in self.scrollable_frame.winfo_children():
             widget.destroy()
 
+        # Clear displayed data in the detail view frame
+        for widget in self.detail_view_frame.winfo_children():
+            widget.destroy()
+        
         # Reset the model for a new search
         self.controller.reset_model()
 
