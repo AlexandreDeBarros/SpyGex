@@ -62,7 +62,7 @@ class SpyGexModel:
     def export_csv(self, file_path):
         # Write custom header with self.url and self.regex
         with open(file_path, 'w', newline='') as file:
-            file.write(f'URL: {self.url}, Regex: {self.regex}\n')
+            file.write(f'Url: {self.url}, Regex: {self.regex}\n')
 
         # Write DataFrame data to CSV
         self.df_result.to_csv(file_path, mode='a', index=False, header=True)

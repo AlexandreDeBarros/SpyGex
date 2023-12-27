@@ -4,7 +4,7 @@ from tkinter import filedialog
 import customtkinter as ctk
 from tkinter import messagebox
 import pyperclip
-from PIL import Image, ImageTk
+from PIL import Image, ImageTk, ImageDraw
 
 # Set the default color theme and appearance mode
 ctk.set_default_color_theme("blue")
@@ -39,10 +39,19 @@ class SpyGexView(ctk.CTk):
     def setup_main_view_layout(self):
         # Configure the logo
         # Update the path with the actual location
-        logo_path = os.path.join(os.path.dirname(__file__), '..\\..\\resources\\logo.jpg')
-        logo_img = Image.open(logo_path)
-        logo_img = logo_img.resize((250, 250), Image.LANCZOS)
-        circular_photo = ImageTk.PhotoImage(logo_img)
+        # logo_path = os.path.join(os.path.dirname(__file__), '..\\..\\resources\\logo.jpg')
+        # logo_img = Image.open(logo_path)
+        # logo_img = logo_img.resize((250, 250), Image.LANCZOS)
+        # mask = Image.new("L", (250, 250), 0)
+        # draw = ImageDraw.Draw(mask)
+        # draw.ellipse((0, 0, 250, 250), fill=255)
+        # logo_pil_img = Image.open(logo_path)
+        # logo_pil_img = logo_pil_img.resize((250, 250), Image.LANCZOS)
+        # circular_img = Image.new("RGBA", (250, 250))
+        # circular_img.paste(logo_pil_img, mask=mask)
+        # circular_photo = ImageTk.PhotoImage(logo_img)
+        # label = ctk.CTkLabel(self, image=circular_photo, fg_color="transparent", text="")
+        # label.place(relx=0.5, rely=0.25, anchor=ctk.CENTER)
 
         # URL entry field
         self.url_entry = ctk.CTkEntry(self.main_view_frame, placeholder_text="Enter the URL to scrap", width=300, height=40)
@@ -68,11 +77,11 @@ class SpyGexView(ctk.CTk):
         # Initialize the detail view frame
         self.detail_view_frame = ctk.CTkFrame(self)
         
-        # Configure the scrollable frame to occupy 3/4 of the height
+        # Configure the scrollable frame 
         self.scrollable_frame = ctk.CTkScrollableFrame(self.detail_view_frame)
         self.scrollable_frame.pack(padx=10, pady=10, fill="both", expand=True)
 
-        # Frame for buttons, occupying the remaining 1/4
+        # Frame for buttons
         button_frame = ctk.CTkFrame(self.detail_view_frame)
         button_frame.pack(padx=10, pady=10, fill="x")
 
@@ -86,12 +95,13 @@ class SpyGexView(ctk.CTk):
 
     # Update scrollable frame with search results
     def update_scrollable_frame(self, df, url, regex_to_use):
+        
         # Remove old widgets
         for widget in self.scrollable_frame.winfo_children():
             widget.destroy()
 
-        # Create labels for domain name and regex
-        info_frame = ctk.CTkFrame(self.scrollable_frame)
+        # Create frame and labels for domain name and regex
+        info_frame = ctk.CTkFrame(self)
         info_frame.pack(fill='x', padx=10, pady=5)
         ctk.CTkLabel(info_frame, text=f"Domain Name : {url}").pack(side='left', padx=5)
         ctk.CTkLabel(info_frame, text=f"Regex : {regex_to_use}").pack(side='left', padx=5)
@@ -177,7 +187,7 @@ class SpyGexView(ctk.CTk):
 
     def export_csv(self):
         # Export data to a CSV file
-        self.controller.export_csv()
+
         file_path = filedialog.asksaveasfilename(defaultextension='.csv',
                                                  filetypes=[("CSV files", '*.csv')],
                                                  title="Save As")
