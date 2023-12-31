@@ -1,73 +1,115 @@
-# SpyGex - Web Scraping Application
+# SpyGex - Web Scraping Application 
 
-SpyGex is a comprehensive web scraping application designed to extract content from websites using regular expressions. It's built using Python, making it a powerful yet user-friendly tool for data extraction and analysis.
+SpyGex is a comprehensive web scraping application designed to extract content from websites using regular expressions. Built with Python, it offers a powerful yet user-friendly platform for data extraction and analysis. The application is designed to be used directly without the need for installing additional applications or browsers, providing a standalone solution for your scraping needs.
 
 ## Installation
 
-To install and run SpyGex, follow these steps:
-
 1. **Clone or Download the Repository:**
-   - Use `git clone` or download the ZIP from the repository.
-   
+   - `git clone https://github.com/AlexandreDeBarros/SpyGex.git` or download the ZIP from the repository.
+
 2. **Install Dependencies:**
-   - Ensure Python 3 is installed on your system.
-   - Install required libraries by running `pip install -r requirements.txt` in the terminal within the project directory.
+   - Ensure Python 3.11 is installed on your system.
+   - Run `pip install -r requirements.txt` in the terminal within the project directory to install required libraries.
 
 3. **Run the Application:**
-   - Execute the main script: `python App.py`.
+   - Navigate to the `src` directory and run `python App.py` to start the application.
 
 ## Features
 
-1. **Adjust Settings:**
-   - Customize the scraping settings and UI preferences as needed.
-
-2. **Regular Expression Based Scraping:**
-   - Utilize custom or predefined regular expressions for targeted scraping.
+- **Customizable Settings:**
+  - Configure scraping rules, output formats, and UI preferences.
   
-3. **Concurrent Web Crawling:**
-   - Speed up the scraping process with adjustable parallel processing capabilities.
+- **Regular Expression Scraping:**
+  - Employ powerful regex patterns for precise data targeting.
 
-4. **Data Export:**
-   - Export scraped data in CSV, JSON, or Excel format.
+- **Multithreaded Crawling:**
+  - Accelerate data collection with multi-threaded web crawling.
 
-5. **User Interface:**
-   - Intuitive GUI built with Tkinter for easy interaction and monitoring.
+- **Diverse Data Export Options:**
+  - Choose between CSV, JSON, or Excel formats for data export.
+
+- **User-Friendly Interface:**
+  - Engage with an intuitive GUI, simplifying the scraping process.
+
+## Ideas for Future Improvements
+
+- **Settings Memory:**
+  - Implement functionality to remember user settings between searches, enhancing user experience by reducing setup time for frequent tasks.
+
+- **Dynamic Page Handling:**
+  - Introduce the execution of JavaScript to handle scraping from dynamically generated web pages, expanding the application's scraping capabilities to a broader range of websites.
 
 ## Architecture
 
-SpyGex follows the MVC (Model-View-Controller) architecture, providing a clear separation between the user interface, data handling, and control logic:
+SpyGex adopts the MVC (Model-View-Controller) architecture:
 
-- **Model (`SpyGexModel`):** Handles data manipulation, web scraping logic, and stores results.
-  
-- **View (`SpyGexView`):** Manages the user interface, displaying results and accepting user inputs.
+- **Model (`spygex_model.py`):** Manages the data logic and storage.
+- **View (`spygex_view.py`):** Interfaces with the user, presenting data and options.
+- **Controller (`spygex_controller.py`):** Connects the model and view, directing user commands.
 
-- **Controller (`SpyGexController`):** Acts as an intermediary between the model and view, handling user requests and updating the view accordingly.
+## Project Structure
+
+```
+SpyGex/
+│
+├── config/
+│   └── config.json (configuration file for regex)
+│
+├── resources/
+│   └── ... (resource files like icons and logo)
+│
+└── src/
+│   ├── controller/
+│   │   └── spygex_controller.py (controller)
+│   │
+│   ├── model/
+│   │   └── spygex_model.py (model)
+│   │
+│   ├── utils/
+│   │   └── ... (utility module)
+│   │
+│   ├── view/
+│   │   ├── custom_widget/
+│   │   │   └── ... (custom widget for ctk)
+│   │   └── spygex_view.py (view)
+│   │
+│   └── App.py (entry point)
+├── .gitignore
+├── README.md
+└── requirements.txt
+```
 
 ## Libraries Used
 
 - **Data Manipulation:** `pandas`
 - **Web Scraping:** `requests`, `BeautifulSoup`
-- **Parallel Processing:** `ThreadPoolExecutor` from `concurrent.futures`
-- **User Interface:** `tkinter`, `customtkinter`
-- **Utilities:** `json`, `re` (Regular Expressions)
+- **Concurrency:** `concurrent.futures`
+- **UI:** `tkinter`, `customtkinter`
+- **Clipboard Operations:** `pyperclip`
+- **Image Handling:** `PIL` (Python Imaging Library)
+- **Utilities:** `json`, `re`, `threading`
 
 ## Usage
 
-After launching SpyGex, follow these steps:
+1. **Configure Settings:**
+   - Set your preferences and rules for scraping within the application or config files.
 
-1. **Adjust Settings:**
-   - Customize the scraping settings and UI preferences as needed.
+2. **Specify the URL:**
+   - Enter the website URL from which data needs to be scraped.
 
-2. **Enter the Target URL:**
-   - Specify the website URL you wish to scrape.
+3. **Set up Regex Patterns:**
+   - Define the regular expressions for the data points to be extracted.
 
-3. **Input or Select a Regular Expression:**
-   - Use a predefined pattern or enter a custom regex.
-
-4. **Start Scraping:**
-   - Initiate the scraping process and view real-time results.
+4. **Launch Scraping:**
+   - Begin the scraping process with a single click.
 
 5. **Export Data:**
-   - Save the extracted data in your preferred format.
+   - Save the results in the desired format for further use or analysis.
 
-SpyGex provides a versatile and user-friendly platform for web scraping enthusiasts and professionals alike, combining powerful scraping capabilities with an intuitive interface.
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## Acknowledgments
+
+- A special thanks to the main contributors: Inkoming and Karsov91, for their significant contributions to the development of this project.
