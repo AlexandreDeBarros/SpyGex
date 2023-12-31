@@ -20,7 +20,7 @@ SpyGex is a comprehensive web scraping application designed to extract content f
   - Configure scraping rules, output formats, and UI preferences.
   
 - **Regular Expression Scraping:**
-  - Employ powerful regex patterns for precise data targeting.
+  - Employ powerful REGEX patterns for precise data targeting.
 
 - **Multithreaded Crawling:**
   - Accelerate data collection with multi-threaded web crawling.
@@ -53,7 +53,7 @@ SpyGex adopts the MVC (Model-View-Controller) architecture:
 SpyGex/
 │
 ├── config/
-│   └── config.json (configuration file for regex)
+│   └── config.json (configuration file for REGEX)
 │
 ├── resources/
 │   └── ... (resource files like icons and logo)
@@ -97,7 +97,7 @@ SpyGex/
 2. **Specify the URL:**
    - Enter the website URL from which data needs to be scraped.
 
-3. **Set up Regex Patterns:**
+3. **Set up REGEX Patterns:**
    - Define the regular expressions for the data points to be extracted.
 
 4. **Launch Scraping:**
