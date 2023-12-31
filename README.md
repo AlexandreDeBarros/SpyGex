@@ -47,6 +47,8 @@ SpyGex adopts the MVC (Model-View-Controller) architecture:
 - **View (`spygex_view.py`):** Interfaces with the user, presenting data and options.
 - **Controller (`spygex_controller.py`):** Connects the model and view, directing user commands.
 
+The choice of MVC is driven by its ability to create a clear separation of concerns, making the code more modular, maintainable, and scalable.
+
 ## Project Structure
 
 ```
