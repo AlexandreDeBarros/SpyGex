@@ -127,4 +127,4 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## Acknowledgments
 
-- A special thanks to the main contributors: Inkoming and Karsov91, for their significant contributions to the development of this project.
+- A special thanks to the main contributors: @Inkoming and @Karsov91, for their significant contributions to the development of this project.
