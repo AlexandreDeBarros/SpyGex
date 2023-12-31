@@ -58,6 +58,8 @@ After launching SpyGex, follow these steps:
 1. **Adjust Settings:**
    - Customize the scraping settings and UI preferences as needed.
 
+https://github.com/AlexandreDeBarros/SpyGex/assets/45422062/77c194c5-71fe-410a-9867-c4a9a0ade994
+
 2. **Enter the Target URL:**
    - Specify the website URL you wish to scrape.
 
