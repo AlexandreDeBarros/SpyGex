@@ -20,7 +20,7 @@ SpyGex is a comprehensive web scraping application designed to extract content f
   - Configure scraping rules, output formats, and UI preferences.
   
 - **Regular Expression Scraping:**
-  - Employ powerful REGEX patterns for precise data targeting.
+  - Employ powerful regex patterns for precise data targeting.
 
 - **Multithreaded Crawling:**
   - Accelerate data collection with multi-threaded web crawling.
@@ -53,7 +53,7 @@ SpyGex adopts the MVC (Model-View-Controller) architecture:
 SpyGex/
 │
 ├── config/
-│   └── config.json (configuration file for REGEX)
+│   └── config.json (configuration file for regex)
 │
 ├── resources/
 │   └── ... (resource files like icons and logo)
@@ -94,17 +94,27 @@ SpyGex/
 1. **Configure Settings:**
    - Set your preferences and rules for scraping within the application or config files.
 
+https://github.com/AlexandreDeBarros/SpyGex/assets/45422062/d9cbe986-9f6c-45f4-b5db-b006c8a07372
+
 2. **Specify the URL:**
    - Enter the website URL from which data needs to be scraped.
 
-3. **Set up REGEX Patterns:**
+https://github.com/AlexandreDeBarros/SpyGex/assets/45422062/47322871-3761-43b0-85e5-8e93dae29b1f
+
+3. **Set up Regex Patterns:**
    - Define the regular expressions for the data points to be extracted.
+
+https://github.com/AlexandreDeBarros/SpyGex/assets/45422062/4bb6db34-0312-4372-b1f9-2ef147fb6ab8
 
 4. **Launch Scraping:**
    - Begin the scraping process with a single click.
 
+https://github.com/AlexandreDeBarros/SpyGex/assets/45422062/cd05266a-a420-4786-9105-3b37c5704f37
+
 5. **Export Data:**
    - Save the results in the desired format for further use or analysis.
+
+https://github.com/AlexandreDeBarros/SpyGex/assets/45422062/c5e75bfc-54ac-4cef-ae4e-6bb0afd290c5
 
 ## License
 
