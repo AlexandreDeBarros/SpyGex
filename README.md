@@ -33,13 +33,13 @@ SpyGex is a comprehensive web scraping application designed to extract content f
 
 ## Ideas for Future Improvements and Enhancements
 
-1. **Settings Memory:**
+- **Settings Memory:**
    - Implement functionality to remember user settings between searches. This feature will enhance the user experience by reducing the setup time for frequent tasks. Remembering settings such as URLs, regular expressions, and output formats will streamline repetitive scraping activities.
 
-2. **Dynamic Page Handling:**
+- **Dynamic Page Handling:**
    - Introduce the capability to execute JavaScript, facilitating scraping from dynamically generated web pages. This improvement will expand the application's scraping capabilities to include websites that rely heavily on JavaScript for content generation, thereby accessing a wider range of data sources.
 
-3. **Centralizing Options Management:**
+- **Centralizing Options Management:**
    - Shift the management of options and settings from the View to the Model. This architectural refinement will enhance the application's design by adhering more closely to the MVC principles. Centralizing settings management in the Model will simplify the process of storing and retrieving user preferences and make the application's codebase more organized and efficient.
 
 ## Architecture
